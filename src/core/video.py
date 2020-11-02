@@ -3,7 +3,6 @@ import datetime
 from src.services.assets import asset_path
 
 
-# todo: function accepts param which is passed to video capture
 # todo: frames are sent via api (async jobs) based on fps
 class Capture:
 
@@ -21,9 +20,8 @@ class Capture:
 
         frame_count = fps
         while True:
-            print(f"Frame count: [{frame_count}]")
             ret, frame = cap.read()
-            print(f"Image capture: {ret}")
+            print(f"Frame count: [{frame_count}] || Image capture: {ret}")
 
             if frame_count == 0:
                 filename = f"image-{datetime.datetime.now().isoformat()}.jpg"
