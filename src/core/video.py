@@ -9,6 +9,14 @@ class Capture:
     def __init__(self, capture_param):
         self.capture_param = capture_param
 
+    def view(self):
+        cap = cv2.VideoCapture(self.capture_param)
+        while True:
+            ret, frame = cap.read()
+            cv2.imshow('frame', frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
     def start(self):
         cap = cv2.VideoCapture(self.capture_param)
         print(f"Captured {self.capture_param}")
