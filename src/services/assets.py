@@ -14,3 +14,7 @@ def asset_path(filename):
 
 def delete_asset(filename):
     os.unlink(f"{ASSETS_FOLDER}/{filename}")
+
+
+def delete_file(filepath):
+    os.unlink(filepath)
