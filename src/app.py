@@ -1,8 +1,6 @@
 from src.core.video import Capture
 from src.services import assets
 
-captureSet = "gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw, framerate=24/1 ! videoconvert ! autovideosink"
-
 
 def main():
     assets.init()
@@ -10,11 +8,17 @@ def main():
     video_proc.start()
 
 
-def show():
+def kafka():
     video_proc = Capture(0)
-    video_proc.view()
+    video_proc.kafka_stream()
+
+
+def api_send():
+    video_proc = Capture(0)
+    video_proc.api_route()
 
 
 if __name__ == '__main__':
     # main()
-    show()
+    # kafka()
+    api_send()
