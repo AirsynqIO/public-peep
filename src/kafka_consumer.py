@@ -8,9 +8,11 @@ from src.services.assets import asset_path
 
 images_topic = "camera-split-images"
 
+KAFKA_SERVER = "18.219.242.102:9092"
+
 images = KafkaConsumer(images_topic,
-                       bootstrap_servers="localhost:9092",
-                       group_id="webcam_images_consumer")
+                       bootstrap_servers=KAFKA_SERVER,
+                       group_id="model_consumer")
 
 for image in images:
     print(image)

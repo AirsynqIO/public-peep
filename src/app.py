@@ -20,5 +20,5 @@ def api_send():
 
 if __name__ == '__main__':
     # main()
-    # kafka()
-    api_send()
+    kafka()
+    # api_send()
