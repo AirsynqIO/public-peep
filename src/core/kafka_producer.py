@@ -1,6 +1,6 @@
 from kafka import KafkaProducer
 
-imagesProducer = KafkaProducer(bootstrap_servers="18.219.242.102:9092")
+imagesProducer = KafkaProducer(bootstrap_servers="13.14.84.232:9092")
 images_topic = "camera-split-images"
 
 
