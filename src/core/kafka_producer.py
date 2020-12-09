@@ -6,3 +6,4 @@ images_topic = "camera-split-images"
 
 def send_image(frame):
     imagesProducer.send(images_topic, frame)
+    imagesProducer.flush()
