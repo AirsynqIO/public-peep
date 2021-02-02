@@ -1,5 +1,6 @@
 from kafka import KafkaProducer
 import json
+from datetime import datetime
 
 from src.config import RPI_ASSIGNED_ID
 
@@ -9,6 +10,6 @@ images_topic = "camera-split-images"
 
 def send_image(frame):
     # todo: location data will be updated later
-    meta_data = {'location': {}, 'assigned_id': RPI_ASSIGNED_ID}
+    meta_data = {'location': {}, 'assigned_id': RPI_ASSIGNED_ID, 'capture_time': datetime.now().timestamp()}
     imagesProducer.send(images_topic, value=frame, key=json.dumps(meta_data).encode())
     imagesProducer.flush()
